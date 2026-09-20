@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rimborso volo: calcolatore gratuito EU261 | ViaggioChiaro</title>
+<meta name="description" content="Ritardo, volo cancellato o overbooking? Stima gratuitamente se potresti avere diritto a compensazione secondo le regole UE.">
+<link rel="stylesheet" href="styles.css">
+<script src="config.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="index.html">ViaggioChiaro</a><nav class="navlinks"><a href="rimborso-volo.html">Rimborso volo</a><a href="costo-noleggio-auto.html">Noleggio auto</a><a href="quanti-gb-esim.html">eSIM</a></nav></div></header>
+<main class="wrap">
+<section class="hero"><span class="eyebrow">Calcolatore rimborso volo</span><h1>Potresti avere diritto a 250, 400 o 600 €?</h1><p class="lead">Inserisci i dati essenziali del volo. Il risultato è una prima stima, non una decisione legale.</p></section>
+
+<section class="tool">
+<div class="form-card">
+<div class="field"><label for="route">Tipo di tratta</label><select id="route">
+<option value="within_eu">Volo all'interno dell'UE</option>
+<option value="from_eu">Partenza dall'UE verso paese extra-UE</option>
+<option value="to_eu_euairline">Arrivo nell'UE da extra-UE con compagnia UE</option>
+<option value="other">Altro caso</option></select></div>
+
+<div class="field"><label for="event">Problema</label><select id="event">
+<option value="delay">Ritardo all'arrivo</option><option value="cancel">Cancellazione</option><option value="denied">Negato imbarco / overbooking</option></select></div>
+
+<div class="field"><label for="distance">Distanza del volo (km)</label><input id="distance" type="number" min="1" value="1200"></div>
+<div class="field"><label for="delay">Ritardo all'arrivo (ore)</label><input id="delay" type="number" min="0" step=".5" value="3"></div>
+<div class="field"><label for="notice">Se cancellato: quanti giorni prima ti hanno avvisato?</label><input id="notice" type="number" min="0" value="3"></div>
+<div class="field"><label for="extraordinary">Sai se c'erano circostanze eccezionali?</label><select id="extraordinary"><option value="unknown">Non lo so</option><option value="no">No</option><option value="yes">Sì</option></select></div>
+<div class="field"><label for="voluntary">In caso di overbooking hai rinunciato volontariamente al posto?</label><select id="voluntary"><option value="no">No</option><option value="yes">Sì</option></select></div>
+<button class="btn" onclick="flightCalc()">Calcola</button>
+</div>
+
+<div class="result-card">
+<span class="badge">Stima indicativa</span>
+<div id="flightStatus" class="result-big">Inserisci i dati</div>
+<div class="kpis"><div class="kpi"><span>Compensazione potenziale</span><strong id="flightAmount">—</strong></div><div class="kpi"><span>Tempo</span><strong>~ 1 minuto</strong></div></div>
+<p id="flightMsg">Il calcolo apparirà qui.</p>
+<div class="notice">La compagnia può non dover pagare compensazione in presenza di circostanze eccezionali. Cancellazioni, riprotezioni e casi particolari richiedono una verifica completa.</div>
+<div class="aff"><h3>Vuoi verificare il caso completo?</h3><p class="mini">Link affiliato: possiamo ricevere una commissione se il servizio recupera il rimborso, senza costi aggiuntivi rispetto alle condizioni del partner.</p><button class="btn secondary" onclick="affiliateClick('airhelp')">Verifica con un servizio specializzato</button></div>
+</div>
+</section>
+
+<section class="section faq">
+<h2>Domande frequenti</h2>
+<details><summary>Quando scatta la compensazione per un ritardo?</summary><p>In generale, per i voli coperti dalle regole UE, un arrivo con almeno 3 ore di ritardo può dare diritto a compensazione se la causa non rientra nelle circostanze eccezionali.</p></details>
+<details><summary>Quanto può valere?</summary><p>Gli importi standard dipendono soprattutto dalla distanza e dalla tratta: 250 €, 400 € o 600 € nei casi previsti.</p></details>
+<details><summary>Il maltempo dà diritto alla compensazione?</summary><p>Condizioni meteo avverse possono essere considerate circostanze eccezionali e quindi escludere la compensazione pecuniaria, pur lasciando possibili altri diritti di assistenza.</p></details>
+</section>
+</main>
+<footer><div class="wrap footer"><a href="index.html">Home</a><a href="trasparenza.html">Trasparenza</a><a href="privacy.html">Privacy</a><div class="mini">Contenuto informativo. Verifica sempre il tuo caso concreto.</div></div></footer>
+</body></html>
