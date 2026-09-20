@@ -2,7 +2,7 @@
 // Finché restano vuoti, il sito funziona normalmente ma non monetizza.
 window.AFFILIATE_LINKS = {
   airhelp: "",
-  discovercars: "",
+  discovercars: "https://www.discovercars.com/?a_aid=viaggiochiaro",
   airalo: "",
   saily: ""
 };
